@@ -1,0 +1,163 @@
+from pathlib import Path
+
+# Recreate the full website file structure: index.html, style.css, and images/ folder.
+site_dir = Path("/mnt/data/superior_host_solutions_github")
+site_dir.mkdir(exist_ok=True)
+html_path = site_dir / "index.html"
+css_path = site_dir / "style.css"
+images_dir = site_dir / "images"
+images_dir.mkdir(exist_ok=True)
+
+# HTML content
+html_code = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Superior Host Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">Superior Host Solutions</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Your Lake Superior Vacation Rental Partner</h1>
+        <p>Full-service Airbnb management in Marquette and the Upper Peninsula.</p>
+        <img src="images/hero.jpg" alt="Lake Superior Shoreline">
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>Full-Service Management:</strong> We handle everything from bookings to turnovers.</li>
+            <li><strong>Dynamic Pricing:</strong> Maximize earnings with our smart pricing tools.</li>
+            <li><strong>Guest Communication:</strong> 24/7 response and care for guests.</li>
+            <li><strong>Maintenance Coordination:</strong> Reliable local service providers.</li>
+            <li><strong>Vacation Home Inspections:</strong> Weekly or monthly check-ins for off-season or vacant properties. <em>Starting at $49/visit</em>.</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>Why Superior Host Solutions?</h2>
+        <p>We’re locally owned, deeply familiar with Marquette’s rental market and ordinances, and committed to 5-star guest experiences.</p>
+        <p><em>Superior Host Solutions was founded in 2025 by a team of Marquette locals who saw the growing demand for high-quality vacation rental management along the Lake Superior shoreline. With firsthand knowledge of the area and a passion for hospitality, we set out to make it easier for property owners to succeed in the short-term rental market—while providing guests with unforgettable Upper Peninsula experiences.</em></p>
+        <img src="images/about.jpg" alt="Vacation rental in Marquette">
+    </section>
+
+    <section id="blog">
+        <h2>From the Blog</h2>
+        <p>Coming soon: insights on hosting, Marquette travel tips, and more.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@superiorhostsolutions.com</p>
+        <p>Phone: (906) 555-1234</p>
+        <p>Serving Marquette and surrounding areas</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Superior Host Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+"""
+
+# CSS content
+css_code = """
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #1e3d59;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: #f4f4f4;
+    padding: 2em;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+}
+
+section {
+    padding: 2em;
+}
+
+section#about img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin-top: 1em;
+}
+
+footer {
+    background: #1e3d59;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header, .hero, section {
+        text-align: center;
+    }
+}
+"""
+
+# Write content to files
+html_path.write_text(html_code)
+css_path.write_text(css_code)
+
+site_dir
+
